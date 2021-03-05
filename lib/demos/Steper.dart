@@ -33,7 +33,7 @@ class SteperclassState extends State<Steper> {
           child: Stepper(
         currentStep: this.stpes,
         steps: my_steps,
-        type: StepperType.vertical,
+        type: StepperType.horizontal,
         onStepTapped: (step) {
           setState(() {
             stpes = step;

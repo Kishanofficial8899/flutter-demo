@@ -51,11 +51,35 @@ class Navigation extends StatelessWidget {
             },
           ),
           navaigationBody(
-            icon: Icons.code,
-            text: 'Local',
+            icon: Icons.local_bar,
+            text: 'Persist',
             onTap: () => {
               Navigator.of(context).pop(),
-              Navigator.pushNamed(context, "/local")
+              Navigator.pushNamed(context, "/localstorage")
+            },
+          ),
+          navaigationBody(
+            icon: Icons.notifications,
+            text: 'Persist',
+            onTap: () => {
+              Navigator.of(context).pop(),
+              Navigator.pushNamed(context, "/pushnotification")
+            },
+          ),
+          navaigationBody(
+            icon: Icons.map,
+            text: 'Map',
+            onTap: () => {
+              Navigator.of(context).pop(),
+              Navigator.pushNamed(context, "/map")
+            },
+          ),
+          navaigationBody(
+            icon: Icons.tab,
+            text: 'Tabbar',
+            onTap: () => {
+              Navigator.of(context).pop(),
+              Navigator.pushNamed(context, "/tabbar"),
             },
           ),
         ],

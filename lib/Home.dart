@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demos/navigation/navigationDrawer.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 import 'demos/components/theme_store.dart';
 import 'package:provider/provider.dart';
+
+// import 'package:camera/camera.dart';
+// import "package:flutter_demos/demos/camera.dart";
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,9 +16,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   //Theme Store
-
   ThemeStore _themeStore;
-
+  // LocalStoarageServices _pref  = LocalStoarageServices();
   GestureDetector getStructuredGridCell(onTap, icon, title) {
     return GestureDetector(
         onTap: onTap,
@@ -90,7 +93,7 @@ class _HomePageState extends State<HomePage> {
       key: _scaffoldKey,
       drawer: Navigation(),
       appBar: AppBar(
-        title: Text("Demo"),
+        title: Text("Demos"),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.lightbulb),
@@ -118,17 +121,27 @@ class _HomePageState extends State<HomePage> {
                 Icons.countertops, "Mobex Counter App"),
             getStructuredGridCell(() => Navigator.pushNamed(context, "/github"),
                 Icons.code, "Fectching Repo Mobx"),
+            getStructuredGridCell(() => Navigator.pushNamed(context, "/map"),
+                Icons.maps_ugc, "Google Map"),
             getStructuredGridCell(
                 () => Navigator.pushNamed(context, "/Stepper"),
                 Icons.emoji_emotions,
                 "Stepper"),
+            getStructuredGridCell(
+                () => Navigator.pushNamed(context, "/pushnotification"),
+                Icons.notifications,
+                "PushNotification"),
             getStructuredGridCell(
                 () => Navigator.pushNamed(context, "/Snakbar"),
                 Icons.wine_bar,
                 "Snakbar"),
             getStructuredGridCell(() => _scaffoldKey.currentState.openDrawer(),
                 Icons.navigation, "Navigation"),
+            getStructuredGridCell(() => Navigator.pushNamed(context, "/age"),
+                Icons.calculate, "Age Calcultion"),
             getStructuredGridCell(() => {}, Icons.home, "GridView"),
+            getStructuredGridCell(() => Navigator.pushNamed(context, "/vedio"),
+                Icons.play_arrow, "Vedio_Player"),
           ],
         );
       }),
