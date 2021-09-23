@@ -1,6 +1,6 @@
-# flutter_demos
+# flutter_demo
 
-A new Flutter project.
+Simple App Made with Flutter.
 
 ## Getting Started
 
